@@ -1,0 +1,46 @@
+.profile-data-container {
+  background: rgb(211, 211, 211);
+  margin: 100px 220px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 160px 20px 60px;
+  position: relative;
+}
+
+.profile-data-container img {
+  max-width: 260px;
+  border-radius: 50%;
+  position: absolute;
+  top: -80px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.068);
+  border: 2px solid rgba(0, 0, 0, 0.137);
+}
+
+.profile-data-container h1 {
+  color: #0084d1;
+  padding-bottom: 20px;
+  padding-top: 40px;
+  font-weight: bold;
+}
+
+.profile-data-container > svg {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.game-quantity-details {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.game-quantity-details h2 {
+  margin: 0;
+  color: #0084d1;
+}

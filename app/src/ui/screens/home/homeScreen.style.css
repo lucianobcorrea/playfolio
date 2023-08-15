@@ -1,0 +1,51 @@
+.cards-container {
+  margin: 40px 0;
+  gap: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user-image {
+  max-width: 55px;
+  border-radius: 50%;
+}
+
+.user-data {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-data p {
+  margin: 0;
+}
+
+.game-status {
+  color: black;
+  border-radius: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.game-status p {
+  margin: 0;
+}
+
+.complete {
+  background: #4CAF50;
+  color: white;
+}
+
+.ongoing {
+  background: #FF9800;
+  color: white;
+}
+
+.finished {
+  background: #1d86e7;
+  color: white;
+}

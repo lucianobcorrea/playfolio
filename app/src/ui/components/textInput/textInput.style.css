@@ -1,0 +1,15 @@
+.input-text {
+  border-radius: 10px;
+  background-color: #ececec;
+  padding: 17px 32px 12px;
+  border: none;
+  font-size: 18px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.textInput-label {
+  padding-bottom: 10px;
+  font-weight: bold;
+  padding-top: 20px;
+}

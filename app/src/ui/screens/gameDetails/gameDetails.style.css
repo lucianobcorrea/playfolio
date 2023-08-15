@@ -1,0 +1,16 @@
+.game-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px 0;
+}
+
+.title-add-game h1 {
+  padding: 10px 0;
+}
+
+.title-add-game {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

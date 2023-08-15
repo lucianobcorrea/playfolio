@@ -1,0 +1,62 @@
+.game-details-link {
+  color: #0084d1;
+}
+
+.game-details-link p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.link-decoration {
+  text-decoration: none;
+}
+
+.list-group-flush {
+  display: flex;
+  padding: 10px 20px;
+}
+
+.card-body {
+  padding-bottom: 0;
+}
+
+.list-group {
+  --bs-list-group-bg: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity));
+}
+
+.card-date {
+  color: rgb(204, 204, 204);
+  font-size: 13px;
+}
+
+.dots-menu {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  cursor: pointer;
+  color: white;
+  margin-right: 20px;
+}
+
+.dots-menu > svg {
+  position: absolute;
+  left: 16px;
+  top: 0;
+}
+
+.dots-menu > .dropdown-menu {
+  background: #ffffff;
+}
+
+.dots-menu > .dropdown-menu > .dropdown-item {
+  color: #000000;
+}
+
+.dots-menu > .dropdown-menu > .dropdown-item:hover {
+  background: #dfdfdf56;
+  color: rgba(0, 0, 0, 0.644);
+}
+
+.edit-game-dropdown {
+  display: flex;
+}
