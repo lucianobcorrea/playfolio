@@ -15,10 +15,11 @@ export function GameCard({
   children,
   date,
   showDots,
+  setGameEdited,
   gameId,
 }) {
-  const { statusInput, handleGameInputChange, onEditGameClick } = useEditGame();
-  const { onDeleteGameClick } = useDeleteGame();
+  const { statusInput, handleGameInputChange, onEditGameClick } = useEditGame(setGameEdited);
+  const { onDeleteGameClick } = useDeleteGame(setGameEdited);
 
   return (
     <Card style={{ width: '20rem', border: 'none' }} bg="dark" text="light">

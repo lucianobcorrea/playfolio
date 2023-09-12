@@ -13,6 +13,7 @@ export function AllDetailsCard({
   index,
   showDots,
   gameId,
+  setGameEdited
 }) {
   return (
     <div className="cards-data" key={index}>
@@ -24,6 +25,7 @@ export function AllDetailsCard({
         showDots={showDots}
         actualStatus={status}
         gameId={gameId}
+        setGameEdited={setGameEdited}
       >
         <hr />
         <div className="user-data">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineSearch } from 'react-icons/ai';
 import { ToastContainer } from 'react-toastify';
 import { useGetGameData } from '../../../hook';
-import { AddGameModal, GameCard, TextInput } from '../../index';
+import { AddGameModal, GameCard, LoadingIcon, TextInput } from '../../index';
 import './searchBar.style.css';
 
 export function SearchBar({ placeholder, data }) {
@@ -41,56 +41,61 @@ export function SearchBar({ placeholder, data }) {
   const clearInput = () => {
     setFilteredData([]);
     setWordEntered('');
+    setClickedItem(false);
   };
 
   return (
     <>
       <ToastContainer />
-      <div className="game-result-container">
-        <div className="search">
-          <div className="search-inputs">
-            <TextInput
-              inputValue={wordEntered}
-              placeholder={placeholder}
-              onChange={handleFilter}
-            />
-            <div className="searchIcon">
-              {filteredData.length === 0 ? (
-                <AiOutlineSearch onClick={() => fetchGameData(appId)} />
-              ) : (
-                <AiOutlineClose onClick={clearInput} />
-              )}
+      {data.applist?.apps ? (
+        <div className="game-result-container">
+          <div className="search">
+            <div className="search-inputs">
+              <TextInput
+                inputValue={wordEntered}
+                placeholder={placeholder}
+                onChange={handleFilter}
+              />
+              <div className="searchIcon">
+                {filteredData.length === 0 ? (
+                  <AiOutlineSearch onClick={() => fetchGameData(appId)} />
+                ) : (
+                  <AiOutlineClose onClick={clearInput} />
+                )}
+              </div>
             </div>
+            {filteredData.length !== 0 && (
+              <div className="data-result">
+                {filteredData.slice(0, 15).map((value, key) => {
+                  return (
+                    <div
+                      key={key}
+                      onClick={() => handleItemClick(value)}
+                      className="data-item"
+                    >
+                      <p>{value.name}</p>
+                      <p>App id: {value.appid}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
-          {filteredData.length !== 0 && (
-            <div className="data-result">
-              {filteredData.slice(0, 15).map((value, key) => {
-                return (
-                  <div
-                    key={key}
-                    onClick={() => handleItemClick(value)}
-                    className="data-item"
-                  >
-                    <p>{value.name}</p>
-                    <p>App id: {value.appid}</p>
-                  </div>
-                );
-              })}
+          {clickedItem ? (
+            <div>
+              <GameCard
+                image={gameData[appId]?.data?.header_image}
+                gameName={gameData[appId]?.data?.name}
+                link={`/game-details/${appId}`}
+              >
+                <AddGameModal gameData={gameData} appId={appId} />
+              </GameCard>
             </div>
-          )}
+          ) : null}
         </div>
-        {clickedItem ? (
-          <div>
-            <GameCard
-              image={gameData[appId]?.data.header_image}
-              gameName={gameData[appId]?.data.name}
-              link={`/game-details/${appId}`}
-            >
-              <AddGameModal gameData={gameData} appId={appId}/>
-            </GameCard>
-          </div>
-        ) : null}
-      </div>
+      ) : (
+        <LoadingIcon />
+      )}
     </>
   );
 }

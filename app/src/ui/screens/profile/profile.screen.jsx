@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import useGlobalUser from '../../../context/user.context';
 import { useEditProfile, useGetAllUserGames } from '../../../hook/index';
@@ -16,12 +16,14 @@ import { TextInput } from '../../components/textInput/textInput.component';
 export function Profile() {
   const [user] = useGlobalUser();
   const { games, fetchAllGames, isLoading } = useGetAllUserGames();
+  const [gameEdited, setGameEdited] = useState();
   const { profileInputs, handleProfileChange, handleProfileSubmit } =
     useEditProfile();
 
   useEffect(() => {
     fetchAllGames();
-  }, []);
+    setGameEdited(false);
+  }, [gameEdited]);
 
   return (
     <>
@@ -81,6 +83,7 @@ export function Profile() {
                   gameId={id}
                   index={index}
                   showDots={true}
+                  setGameEdited={setGameEdited}
                 />
               );
             }

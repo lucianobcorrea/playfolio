@@ -15,3 +15,4 @@ export { AddGameModal } from './components/addGameModal/addGameModal.component';
 export { AllDetailsCard } from './components/allDetailsCard/allDetailsCard.component';
 export { GameStatusSelect } from './components/gameStatusSelect/gameStatusSelect.component';
 export { ConfirmModal } from './components/confirmModal/confirmModal.component';
+export { LoadingIcon } from './components/loadingIcon/loadingIcon.component';

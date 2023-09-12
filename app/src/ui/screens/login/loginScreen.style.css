@@ -27,7 +27,7 @@
 .login-form p > span {
   font-weight: bold;
   display: inline;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .login-form p {
@@ -51,7 +51,7 @@
 
 .login-message {
   display: flex;
-  background: rgba(15, 17, 23, .6);
+  background: rgba(15, 17, 23, 0.6);
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
   padding: 60px;
@@ -84,4 +84,27 @@
   display: flex;
   flex-direction: column;
   margin-top: 60px;
+}
+
+@media only screen and (min-width: 640px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 1280px) {
+  .login-section {
+    overflow: hidden;
+  }
+
+  .login-container {
+    height: 90vh;
+  }
+
+  .login-message img {
+    max-width: 230px;
+  }
 }

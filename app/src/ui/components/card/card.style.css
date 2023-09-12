@@ -1,5 +1,6 @@
 .game-details-link {
   color: #0084d1;
+  display: inline-block;
 }
 
 .game-details-link p {
@@ -59,4 +60,9 @@
 
 .edit-game-dropdown {
   display: flex;
+}
+
+.game-details-link:hover {
+  text-decoration: underline;
+  color: #008ee0;
 }

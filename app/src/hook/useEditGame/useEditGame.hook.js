@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { editGame } from '../../api/game/editGame.api';
 
-export function useEditGame() {
+export function useEditGame(setGameEdited) {
   const [statusInput, setStatusInput] = useState({
     status: 'FINISHED',
   });
@@ -12,6 +12,7 @@ export function useEditGame() {
       try {
         await editGame(gameId, statusInput.status);
         toast.success('Game edited with success!');
+        setGameEdited(true);
       } catch (error) {
         toast.error(error.response.data.message);
       }

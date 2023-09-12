@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { editProfile } from '../../api/user/editProfile.api';
 import useGlobalUser from '../../context/user.context';
 
-export function useEditProfile() {
+export function useEditProfile( ) {
   const [user] = useGlobalUser();
   const [profileInputs, setProfileInputs] = useState({
     name: user.name,
